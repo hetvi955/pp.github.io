@@ -1,0 +1,27 @@
+
+
+body{
+    background-color: rgb(253, 119, 164);
+    font-family: 'Barrio';
+    font-size: 250px;
+    font-weight: 1000;
+    text-align: center;
+    
+}
+
+.byline{
+    margin-right: 20px;
+    text-align: center;
+    font-weight: 350;
+    font-family: 'Thasadith';
+    font-size: 30px;
+    opacity: 0.7
+}
+.go {
+    transition: transform .2s;
+    opacity: 0.8
+}
+.go:hover {
+    transform: scale(1.2);
+    opacity: 1
+}

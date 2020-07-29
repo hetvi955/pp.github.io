@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="gallery.css">
+   
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>sketches</title>
+</head>
+
+<body id="body" style="background-image: url(sketchesbg.jpg);">
+  <input type="button"  id="change" onclick="changeimg" value=" " style="background-image: url(mode.jpg); background-size:100% 100%; width: 35px; height:35px ;border: transparent; float: right; padding-top: 10px;">
+</input>
+<br>
+<br>
+
+<!-- Photo Grid -->
+<div class="row"> 
+  <div class="column">
+   <img src="sketch/s1.jpeg" style="width:90% ; padding:30px">
+    
+    <img src="sketch/s2.jpeg" style="width:100%;  padding:30px">
+    <img src="sketch/s5.jpeg" style="width:95%;  padding:30px">
+  </div>
+    <div class="column">
+   <img src="sketch/s4.jpeg" style="width:95%;  padding:30px">
+    
+    <img src="sketch/s6.jpeg" style="width:85%;  padding:30px">
+   
+  </div>
+    <div class="column">
+   <img src="sketch/s7.jpeg" style="width:55%;  padding:30px; padding-left: 80px;">
+    
+    <img src="sketch/s8.jpeg" style="width:55%; padding:30px; padding-left: 80px;">
+    <img src="sketch/s9.jpeg" style="width:55%; padding:30px; padding-left: 80px;">
+  </div>
+  
+</div>
+
+</body>
+<style>
+  * {
+  box-sizing: border-box;
+}
+
+.row {
+  display: -ms-flexbox; 
+  display: flex;
+  -ms-flex-wrap: wrap; 
+  flex-wrap: wrap;
+  padding: 0 4px;
+}
+
+.column {
+  -ms-flex: 50%; 
+  flex: 50%;
+  padding: 0 4px;
+}
+
+.column img {
+  border: rgb(255, 255, 255) 2px solid;
+  margin-top: 8px;
+  vertical-align: middle;
+}
+
+</style>
+<script>
+
+ var Obj, imgSrc, index;
+f=document.getElementById('font')
+Obj = document.getElementById('body');
+index = 0;
+imgSrc = [
+    'sketchesbg.jpg',
+    'night.jpg'
+];
+
+
+function updateIndex(){
+    if(index === 0){
+        index = 1;
+    }else{
+        index = 0;
+    }
+}
+
+window.onload = function(){
+    Obj.style.backgroundImage = 'url("' + imgSrc[index] + '")';
+    updateIndex();
+};
+
+Obj.onclick = function(e){
+    e.currentTarget.style.backgroundImage = 'url("' + imgSrc[index] + '")';
+    updateIndex();
+}
+
+var elements = document.getElementsByClassName("column");
+
+var i;
+
+function one() {
+    for (i = 0; i < elements.length; i++) {
+    elements[i].style.msFlex = "75%" ;
+    elements[i].style.flex = "75%"
+  
+}
+}
+function two() {
+  for (i = 0; i < elements.length; i++) {
+    elements[i].style.msFlex = "50%";  // IE10
+    elements[i].style.flex = "50%";
+  }
+}
+
+function four() {
+  for (i = 0; i < elements.length; i++) {
+    elements[i].style.msFlex = "25%";  // IE10
+    elements[i].style.flex = "25%";
+  }
+} 
+</script>
+
+
+</html>

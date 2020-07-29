@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="gallery.css">
+   
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>others</title>
+</head>
+
+<body id="body" style="background-image: url(othersbg.jpg);">
+  <input type="button"  id="change" onclick="changeimg" value=" " style="background-image: url(mode.jpg); background-size:100% 100%; border: transparent; float: right; padding-top: 10px;">
+</input>
+
+    <div class="row">
+		<div class="column">
+			<img  class='preview'  src = "other/o1.jpeg"  width="370px" height="400px"  >
+			<div class="overlay1">
+				<div class="text">i am a qt</div>
+			  </div>
+		</div>
+		<div class="column">
+			<img  class='preview'  src = "other/o2.jpeg" width="350px" height="350px" >
+			<div class="overlay2">
+				<div class="text">what's for breakfast?</div>
+			  </div>
+		</div>
+		<div class="column">
+			<img  class='preview'  src = "other/o3.jpeg" width="350px" height="400px"  >
+			<div class="overlay3">
+				<div class="text">#zentangle</div>
+			  </div>
+		</div>
+    </div>
+
+</body>
+<script>
+
+ var Obj, imgSrc, index;
+f=document.getElementById('font')
+Obj = document.getElementById('body');
+index = 0;
+imgSrc = [
+    'othersbg.jpg',
+    'night.jpg'
+];
+
+
+function updateIndex(){
+    if(index === 0){
+        index = 1;
+    }else{
+        index = 0;
+    }
+}
+
+window.onload = function(){
+    Obj.style.backgroundImage = 'url("' + imgSrc[index] + '")';
+    updateIndex();
+};
+
+Obj.onclick = function(e){
+    e.currentTarget.style.backgroundImage = 'url("' + imgSrc[index] + '")';
+    updateIndex();
+}
+  
+</script>
+
+<style>
+#change{
+    height: 35px;
+    width: 35px;
+  }
+.row {
+    display: flex;
+  }
+  
+.column {
+    flex: 33.33%;
+    
+}
+.column {
+  position: relative;
+  width: 50%;
+}
+
+.preview {
+  padding: 20px;
+  padding-left: 40px;
+  margin-top: 30px;
+  display: block;
+  
+}
+
+.overlay1 {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  height: 400px;
+  width: 370px;
+padding: 20px;	
+padding-left: 40px;
+margin-top: 30px;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;  
+  opacity: 0;
+  transition: 1s ease;
+  background-color: #393a3a;
+}
+.overlay2 {
+  padding-left: 40px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  height: 350px;
+  width: 350px;
+padding: 20px;	
+margin-top: 30px;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;  
+  opacity: 0;
+  transition: 1s ease;
+  background-color: #676768;
+}
+
+.overlay3 {
+  padding-left: 40px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  height: 400px;
+  width: 350px;
+padding: 20px;	
+margin-top: 30px;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;  
+  opacity: 0;
+  transition: 1s ease;
+  background-color: #0d0d0e;
+}
+
+.column:hover .overlay1 {
+	padding: 20px;	
+  opacity: 0.5;
+}
+
+.column:hover .overlay2 {
+	padding: 20px;	
+  opacity: 0.5;
+}
+
+.column:hover .overlay3 {
+	padding: 20px;	
+  opacity: 0.5;
+}
+.text {
+  padding: 20px;		
+  color: white;
+  font-size: 20px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+</style>
+</html>
